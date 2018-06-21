@@ -1,0 +1,22 @@
+FROM gcr.io/cloud-builders/gcloud
+
+# デプロイ先のプロジェクト名
+ARG PROJECT_NAME
+# サービスアカウントのキーファイル名
+ARG KEY_FILE_NAME
+# サービスアカウントID
+ARG SERVICE_ACCOUNT_ID
+
+# デプロイ時の環境設定
+ENV APPLICATION=${PROJECT_NAME} \
+    ACCOUNT=${SERVICE_ACCOUNT_ID} \
+    KEY_FILE_NAME=${KEY_FILE_NAME}
+
+# サービスアカウントのキーファイルを、Dockerコンテナ内にコピーする
+COPY ${KEY_FILE_NAME} /${KEY_FILE_NAME}
+
+WORKDIR /workspace
+
+# デプロイスクリプトの実行
+ENTRYPOINT ["sh"]
+CMD ["deploy.sh"]

@@ -1,0 +1,6 @@
+FROM composer/composer:php5
+
+WORKDIR /workspace
+
+ENTRYPOINT ["sh"]
+CMD ["-c", "cd app && composer install"]

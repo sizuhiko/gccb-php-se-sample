@@ -1,0 +1,20 @@
+runtime: php55
+api_version: 1
+threadsafe: true
+
+skip_files:
+- ^(.*/)?composer\.(phar|lock|json)$
+
+handlers:
+- url: /(.*).(html|js|json|css)
+  static_files: public/\1.\2
+  upload: public/(.*)\.(html|js|json|css)
+
+- url: /index\.php
+  script: public/index.php
+
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: 1
+  min_pending_latency: 5000ms
+  max_pending_latency: automatic
