@@ -9,8 +9,9 @@ handlers:
 - url: /(.*).(html|js|json|css)
   static_files: public/\1.\2
   upload: public/(.*)\.(html|js|json|css)
+  application_readable: true
 
-- url: /index\.php
+- url: /
   script: public/index.php
 
 automatic_scaling:
