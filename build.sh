@@ -14,10 +14,6 @@ docker build -t gcr.io/$PROJECT_ID/deploy \
   --build-arg KEY_FILE_NAME=./deployer.key.json \
   .
 
-# enable APIs
-gcloud services enable containerregistry.googleapis.com
-gcloud services enable cloudbuild.googleapis.com
-
 # push images
 gcloud docker -- push gcr.io/$PROJECT_ID/composer
 gcloud docker -- push gcr.io/$PROJECT_ID/deploy
