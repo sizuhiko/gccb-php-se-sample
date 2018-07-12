@@ -1,14 +1,14 @@
 FROM gcr.io/cloud-builders/gcloud
 
-# デプロイ先のプロジェクト名
-ARG PROJECT_NAME
+# デプロイ先のプロジェクトID
+ARG PROJECT_ID
 # サービスアカウントのキーファイル名
 ARG KEY_FILE_NAME
 # サービスアカウントID
 ARG SERVICE_ACCOUNT_ID
 
 # デプロイ時の環境設定
-ENV APPLICATION=${PROJECT_NAME} \
+ENV PROJECT_ID=${PROJECT_ID} \
     ACCOUNT=${SERVICE_ACCOUNT_ID} \
     KEY_FILE_NAME=${KEY_FILE_NAME}
 
