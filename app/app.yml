@@ -1,8 +1,5 @@
 runtime: php72
 
-skip_files:
-- ^(.*/)?composer\.(phar|lock|json)$
-
 handlers:
 - url: /(.*).(html|js|json|css)
   static_files: public/\1.\2
