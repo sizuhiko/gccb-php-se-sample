@@ -35,11 +35,13 @@ Google Cloud Container Builder で利用するコンテナをビルドします�
 - ビルド用コンテナのビルド
 - デプロイ用コンテナのビルド
 
+ご利用の環境で `ERROR: (gcloud.docker) Docker login failed.` が表示される場合は `gcloud auth configure-docker` で認証させてください。
+
 ## PUSH TO DEPLOY のトリガーをセットする
 
 この手順はAPIが公開されていないので、GCPのコンソール（ブラウザ）から実施します。
 
-`Container Registory` にアクセスします。
+`Cloud Build` にアクセスします。
 `トリガーを作成` を選択するとモーダルダイアログが出るので、さらに `トリガーを作成` ボタンを押します。
 
 トリガー元のリポジトリは3つ選択できます。

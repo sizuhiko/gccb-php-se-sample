@@ -1,6 +1,4 @@
-runtime: php55
-api_version: 1
-threadsafe: true
+runtime: php72
 
 skip_files:
 - ^(.*/)?composer\.(phar|lock|json)$
@@ -10,9 +8,6 @@ handlers:
   static_files: public/\1.\2
   upload: public/(.*)\.(html|js|json|css)
   application_readable: true
-
-- url: /
-  script: public/index.php
 
 automatic_scaling:
   min_idle_instances: automatic

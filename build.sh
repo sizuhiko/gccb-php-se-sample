@@ -1,6 +1,6 @@
 # pull base images
 gcloud docker -- pull gcr.io/cloud-builders/gcloud
-docker pull composer/composer:php5
+docker pull composer/composer:alpine
 
 # build composer images
 docker build -t gcr.io/$PROJECT_ID/composer -f Dockerfile.composer .
