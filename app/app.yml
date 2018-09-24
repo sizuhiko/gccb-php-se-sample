@@ -5,6 +5,9 @@ handlers:
   static_files: public/\1.\2
   upload: public/(.*)\.(html|js|json|css)
 
+- url: /
+  script: auto
+
 automatic_scaling:
   min_idle_instances: automatic
   max_idle_instances: 1
